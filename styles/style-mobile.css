@@ -122,7 +122,7 @@ main #checkbox_todo_template::before {
 main #todo-list, main #filter-pannel {
   box-shadow: 1px 2px 23px 4px rgba(187, 187, 187, 0.219);
 }
-main #todo_template {
+main #todo-list-template, main #todo_template {
   display: none;
 }
 main #todo-list {
