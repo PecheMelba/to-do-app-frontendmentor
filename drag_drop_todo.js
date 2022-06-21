@@ -34,12 +34,12 @@ function dragEnd(e)
 //Get current element overlaping
 let current_overlapping_element = null;
 items.forEach(current_item => 
-    {
-        current_item.addEventListener('dragenter', dragEnter)
-        current_item.addEventListener('dragover', dragOver);
-        current_item.addEventListener('dragleave', dragLeave);
-        current_item.addEventListener('drop', drop);
-    });
+{
+    current_item.addEventListener('dragenter', dragEnter)
+    current_item.addEventListener('dragover', dragOver);
+    current_item.addEventListener('dragleave', dragLeave);
+    current_item.addEventListener('drop', drop);
+});
 
 function dragEnter(e) 
 {
