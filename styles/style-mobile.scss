@@ -113,7 +113,7 @@ main //default theme clear
     #todo-list,#filter-pannel {box-shadow: 1px 2px 23px 4px rgba(187, 187, 187, 0.219);}
     
 
-    #todo_template {display: none;}
+    #"todo-list-template,#todo_template {display: none;}
     #todo-list
     {
         width:$w_size;
