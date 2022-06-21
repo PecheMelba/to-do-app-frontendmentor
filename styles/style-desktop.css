@@ -1,0 +1,18 @@
+@media all and (min-width: 900px) {
+  main {
+    background: url("../images/bg-desktop-light.jpg") no-repeat 0 0/100vw 30vh, hsl(0deg, 0%, 98%);
+  }
+  main #todo-footer #filter-pannel {
+    all: unset;
+    display: flex;
+    justify-content: space-between;
+    width: 170px;
+  }
+  main #todo-footer #filter-pannel button {
+    font-size: 16px;
+  }
+
+  .dark {
+    background: url("../images/bg-desktop-dark.jpg") no-repeat 0 0/100vw 30vh, hsl(235deg, 21%, 11%);
+  }
+}

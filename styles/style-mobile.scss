@@ -1,0 +1,217 @@
+@use 'theme-color';
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:400,700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-family: "Josefin Sans";
+}
+/*===========Drag n drop css============= */
+.ignore_element{pointer-events: none;}
+.is-dropping{opacity: 0.7; cursor: pointer;}
+.drag-over{border-bottom: 2px rgb(0, 162, 255) dashed!important;}
+
+/*================ Design============== */
+button {all:unset}
+button:hover
+{
+    cursor: pointer;
+    color: rgb(0, 162, 255);          
+}
+//custom checkbox
+input[type="checkbox"] 
+{    
+    appearance: none;    
+    border: theme-color.$Very-Light-Grayish-Blue 2px solid;
+    border-radius: 50%;
+    padding: 0.5em;
+    display: grid;
+    place-content: center;
+}
+input[type="checkbox"]::before 
+{
+    content: "";
+    width: 0.45em;
+    height: 0.45em;    
+}
+input[type="checkbox"]:checked{background: linear-gradient(90deg, hsl(192, 100%, 67%) 0%, hsl(280, 87%, 65%) 100%);}
+input[type="checkbox"]:checked::before {background: url("../images/icon-check.svg") no-repeat 0 0 / 120%;}
+
+input[type="checkbox"][readonly] {pointer-events: none; }
+
+.checked
+{
+    text-decoration: line-through;
+    color: theme-color.$Light-Grayish-Blue;
+}
+
+main //default theme clear
+{    
+    background: url("../images/bg-mobile-light.jpg") no-repeat  0 0 / 100vw 30vh, theme-color.$Very-Light-Gray;
+    height: auto;
+    min-height: 100vh;    
+    $w_size : 85%;
+    $max_width: 600px;
+
+    header,#new-todo-container,#todo-list,#todo-footer
+    {
+        width:$w_size;
+        max-width:$max_width;
+        margin: 0 auto;
+    }
+
+    header
+    {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;            
+        margin: 0em auto 2em auto;
+        padding-top: 3em;
+
+        h1{font-size: 2em; color:white}
+        #switch-theme
+        {
+            background: url("../images/icon-moon.svg") 0 0 / 100% 100%;
+            width: 1.5em;
+            height: 1.5em;
+        }
+    }
+
+    #new-todo-container
+    {
+        display: flex;
+        align-items: center;        
+        gap: 1em;
+        margin: 0 auto 1em auto;
+        padding: 1em;
+        width:calc($w_size - 2em);
+        max-width: calc($max_width - 2em);
+
+        background-color: white;
+        border-radius:5px;
+        
+        #input_todo
+        {
+            all:unset;            
+            width: calc(100% - 1em);
+            
+        }
+        #input_todo::placeholder
+        {
+            color: theme-color.$Dark-Grayish-Blue;
+        }
+    }
+
+    #checkbox_todo_template::before {pointer-events: none;}
+    #todo-list,#filter-pannel {box-shadow: 1px 2px 23px 4px rgba(187, 187, 187, 0.219);}
+    
+
+    #todo_template {display: none;}
+    #todo-list
+    {
+        width:$w_size;
+        background-color: white;
+        border-radius: 10px 10px 0 0;
+        list-style-type: none;
+        user-select: none;
+
+        li
+        {    
+            //all:unset; 
+            display: flex!important; 
+            align-items: center;
+            justify-content: space-between; 
+
+            padding: 1em;
+            border-bottom: 1px theme-color.$Very-Light-Grayish-Blue solid;
+
+            .check-box-container 
+            {
+                display: flex!important; 
+                align-items: center;
+                gap: 1em;
+            }
+            .delete-btn
+            {                
+                width: 15px;
+                height: 15px;                
+                background: url("../images/icon-cross.svg") no-repeat 0 0 /100% 100%;
+            }
+        }
+    }
+
+    #todo-footer
+    {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        width: calc($w_size - 2em);
+        max-width: calc($max_width - 2em);
+        padding: 1em 1em;
+        border-radius: 0 0 10px 10px;    
+        background-color: white;   
+
+        button,label {font-size: 16px; }
+
+        #filter-pannel
+        {
+            position: absolute;
+            top:4em;
+            left:0;
+            padding: 1em 0;
+            border-radius:10px;
+
+            display: flex;
+            justify-content: center;
+            gap: 0.5em;
+            width: calc(100% );             
+            background-color: white;   
+
+            button {font-size: 18px; }            
+        }
+    }
+    #instruction-txt,.attribution
+    {
+        display: block;
+        text-align: center;
+        margin-top: 6em;
+    }
+}
+
+.dark
+{
+    background: url("../images/bg-mobile-dark.jpg") no-repeat  0 0 / 100vw 30vh, theme-color.$Very-Dark-Blue;
+    color: theme-color.$Very-Light-Gray;
+
+    input[type="checkbox"] 
+    {        
+        appearance: none;    
+        border: theme-color.$Very-Dark-Grayish-Blue 2px solid;
+    }
+
+    #todo-list,#filter-pannel {box-shadow: none;}
+
+
+    header
+    {
+        #switch-theme   {background: url("../images/icon-sun.svg") 0 0 / 100% 100%}
+    }
+
+    #new-todo-container 
+    {
+        color: theme-color.$Light-Grayish-Blue;
+
+        #input_todo::placeholder
+        {
+            color: theme-color.$Dark-Grayish-Blue;
+        }
+    }
+
+    #new-todo-container,#todo-footer,#filter-pannel, #todo-list
+    {
+        background: theme-color.$Very-Dark-Desaturated-Blue!important;
+    }
+}
