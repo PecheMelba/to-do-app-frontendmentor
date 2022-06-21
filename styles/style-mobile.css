@@ -55,10 +55,6 @@ input[type=checkbox]:checked::before {
   background: url("../images/icon-check.svg") no-repeat 0 0/120%;
 }
 
-input[type=checkbox][readonly] {
-  pointer-events: none;
-}
-
 .checked {
   text-decoration: line-through;
   color: hsl(234deg, 39%, 85%);
@@ -101,6 +97,12 @@ main #new-todo-container {
   background-color: white;
   border-radius: 5px;
 }
+main #new-todo-container #fake_checkbox {
+  border: hsl(236deg, 33%, 92%) 2px solid;
+  border-radius: 50%;
+  padding: 0.7em;
+  display: grid;
+}
 main #new-todo-container #input_todo {
   all: unset;
   width: calc(100% - 1em);
@@ -133,19 +135,19 @@ main #todo-list {
       -ms-user-select: none;
           user-select: none;
 }
-main #todo-list li {
-  display: flex !important;
+main #todo-list .todo-element {
+  display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1em;
   border-bottom: 1px hsl(236deg, 33%, 92%) solid;
 }
-main #todo-list li .check-box-container {
+main #todo-list .todo-element .check-box-container {
   display: flex !important;
   align-items: center;
   gap: 1em;
 }
-main #todo-list li .delete-btn {
+main #todo-list .todo-element .delete-btn {
   width: 15px;
   height: 15px;
   background: url("../images/icon-cross.svg") no-repeat 0 0/100% 100%;

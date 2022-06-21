@@ -16,23 +16,22 @@
   <main>
     <header>
       <h1>TODO</h1>
-      <button id="switch-theme" src="images/icon-moon.svg" />
+      <button id="switch-theme"/>
     </header>
     
     <div id="new-todo-container">
-      <input id="checkbox_new_todo" type="checkbox" readonly>
+      <div id="fake_checkbox"></div>
       <input type="text" id="input_todo" name="fname" placeholder="Create a new todo"/>
     </div>
 
-    <li id="todo_template" draggable="true">
-      <div class="check-box-container">
-        <input id="checkbox_todo" type="checkbox">
-        <label for="checkbox_todo">Task1</label>
-      </div>
-      <button class="delete-btn"/>
-    </li>
-   
     <ul id="todo-list">
+      <li id="todo_template" draggable="true">
+        <div class="check-box-container">
+          <input id="checkbox_todo" type="checkbox">
+          <label for="checkbox_todo">Task1</label>
+        </div>
+        <button class="delete-btn"/>
+      </li>
     </ul>
 
     <div id="todo-footer">
@@ -50,6 +49,6 @@
       Coded by <a href="#">Peche melba</a>.
     </div>
   </main>
-  <script src="drag-drop-todo.js" type="text/javascript"></script>
+  <script src="drag-drop-todo.js"></script>
 </body>
 </html>

@@ -149,7 +149,7 @@ document.getElementById("active-filter").addEventListener("click", () =>
     {
         if(!current_item.querySelector("input").checked)
         {
-            current_item.style.display = "block";
+            current_item.style.display = "flex";
         }            
         else current_item.style.display = "none";
     });  
@@ -160,11 +160,16 @@ document.getElementById("completed-filter").addEventListener("click", () =>
 {
     items.forEach(current_item =>
     {
+        
         if(current_item.querySelector("input").checked)
         {
-            current_item.style.display = "block";
+            current_item.style.display = "flex";
         }            
-        else current_item.style.display = "none";
+        else 
+        {
+            console.log(current_item);
+            current_item.style.display = "none";
+        }
     });  
 });
 
@@ -173,7 +178,7 @@ document.getElementById("all-filter").addEventListener("click", () =>
 {
     items.forEach(current_item =>
     {
-        current_item.style.display = "block";
+        current_item.style.display = "flex";
     });  
 });
 

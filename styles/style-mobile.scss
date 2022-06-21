@@ -20,7 +20,7 @@ button:hover
     color: rgb(0, 162, 255);          
 }
 //custom checkbox
-input[type="checkbox"] 
+input[type="checkbox"]
 {    
     appearance: none;    
     border: theme-color.$Very-Light-Grayish-Blue 2px solid;
@@ -37,8 +37,6 @@ input[type="checkbox"]::before
 }
 input[type="checkbox"]:checked{background: linear-gradient(90deg, hsl(192, 100%, 67%) 0%, hsl(280, 87%, 65%) 100%);}
 input[type="checkbox"]:checked::before {background: url("../images/icon-check.svg") no-repeat 0 0 / 120%;}
-
-input[type="checkbox"][readonly] {pointer-events: none; }
 
 .checked
 {
@@ -91,6 +89,14 @@ main //default theme clear
         background-color: white;
         border-radius:5px;
         
+        #fake_checkbox
+        {
+            border: theme-color.$Very-Light-Grayish-Blue 2px solid;
+            border-radius: 50%;
+            padding: 0.7em;
+            display: grid;
+        }
+
         #input_todo
         {
             all:unset;            
@@ -116,10 +122,10 @@ main //default theme clear
         list-style-type: none;
         user-select: none;
 
-        li
+        .todo-element
         {    
             //all:unset; 
-            display: flex!important; 
+            display: flex; 
             align-items: center;
             justify-content: space-between; 
 
