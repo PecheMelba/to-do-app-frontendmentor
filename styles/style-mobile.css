@@ -101,7 +101,6 @@ main #new-todo-container #fake_checkbox {
   border: hsl(236deg, 33%, 92%) 2px solid;
   border-radius: 50%;
   padding: 0.7em;
-  display: grid;
 }
 main #new-todo-container #input_todo {
   all: unset;

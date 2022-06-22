@@ -66,6 +66,32 @@ function drop(e)
     drop_item.classList.remove('hide');
 }
 
+//MOBILE DRAG AND DROP
+items.forEach(current_item => 
+{
+    current_item.addEventListener('touchmove', function(e) 
+    {
+        console.log("try to drag");
+        // grab the location of touch
+        var touchLocation = e.targetTouches[0];
+        
+        // assign box new coordinates based on the touch.
+        current_item.style.left = touchLocation.pageX + 'px';
+        current_item.style.top = touchLocation.pageY + 'px';
+    })
+    current_item.addEventListener('touchend', function(e) 
+    {
+        // current box position.
+        var x = parseInt(current_item.style.left);
+        var y = parseInt(current_item.style.top);
+    });
+});
+
+
+
+
+
+
 //ADD NEW TODO
 document.getElementById("input_todo").addEventListener("keypress", (event) =>
 {
